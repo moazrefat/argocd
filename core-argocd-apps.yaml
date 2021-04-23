@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://gitlab.moaaznoaman.com/root/argocd.git
+    repoURL: https://github.com/moazrefat/argocd.git
     targetRevision: HEAD
     path: core
     directory:
