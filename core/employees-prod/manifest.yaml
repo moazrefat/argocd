@@ -211,51 +211,51 @@ spec:
           requests:
             cpu: 100m
             memory: 100Mi
----
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
-metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: moaaznoaman
-    kubernetes.io/ingress.class: nginx
-  labels:
-    app: employees
-  name: employees-ingress-prod
-  namespace: employees-prod
-spec:
-  rules:
-  - host: prod.k8s.moaaznoaman.com
-    http:
-      paths:
-      - backend:
-          serviceName: employees-lb
-          servicePort: 8080
-        path: /
-      - backend:
-          serviceName: employees-lb
-          servicePort: 8080
-        path: /api/hostname
-      - backend:
-          serviceName: employees-lb
-          servicePort: 8080
-        path: /api/details
-      - backend:
-          serviceName: employees-lb
-          servicePort: 8080
-        path: /api/register
-      - backend:
-          serviceName: employees-lb
-          servicePort: 8080
-        path: /api/health
-      - backend:
-          serviceName: employees-lb
-          servicePort: 8080
-        path: /api/info
-      - backend:
-          serviceName: employees-lb
-          servicePort: 8080
-        path: /metrics
-  tls:
-  - hosts:
-    - prod.k8s.moaaznoaman.com
-    secretName: employees-prod
+# ---
+# apiVersion: networking.k8s.io/v1beta1
+# kind: Ingress
+# metadata:
+#   annotations:
+#     cert-manager.io/cluster-issuer: moaaznoaman
+#     kubernetes.io/ingress.class: nginx
+#   labels:
+#     app: employees
+#   name: employees-ingress-prod
+#   namespace: employees-prod
+# spec:
+#   rules:
+#   - host: prod.k8s.moaaznoaman.com
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: employees-lb
+#           servicePort: 8080
+#         path: /
+#       - backend:
+#           serviceName: employees-lb
+#           servicePort: 8080
+#         path: /api/hostname
+#       - backend:
+#           serviceName: employees-lb
+#           servicePort: 8080
+#         path: /api/details
+#       - backend:
+#           serviceName: employees-lb
+#           servicePort: 8080
+#         path: /api/register
+#       - backend:
+#           serviceName: employees-lb
+#           servicePort: 8080
+#         path: /api/health
+#       - backend:
+#           serviceName: employees-lb
+#           servicePort: 8080
+#         path: /api/info
+#       - backend:
+#           serviceName: employees-lb
+#           servicePort: 8080
+#         path: /metrics
+#   tls:
+#   - hosts:
+#     - prod.k8s.moaaznoaman.com
+#     secretName: employees-prod
