@@ -1,20 +1,20 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: employees-dev
-#   namespace: argocd
-# spec:
-#   project: default
-#   source:
-#     repoURL: https://github.com/moazrefat/argocd.git
-#     targetRevision: HEAD
-#     path: core/employees-dev
-#     directory:
-#       recurse: true
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: employees-dev
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: employees-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/moazrefat/argocd.git
+    targetRevision: HEAD
+    path: core/employees-dev
+    directory:
+      recurse: true
+  destination:
+    server: https://192.168.178.100:6443
+    namespace: employees-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
